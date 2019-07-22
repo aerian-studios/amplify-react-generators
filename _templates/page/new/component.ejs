@@ -1,0 +1,31 @@
+---
+to: src/components/<%= h.changeCase.pascal(name) %>/<%= h.changeCase.pascal(name) %>.tsx
+---
+<% const comp = h.changeCase.pascal(name) -%>
+import React, { FC, HTMLAttributes } from "react";
+import gql from "graphql-tag";
+import { useQuery } from "react-apollo-hooks";
+
+interface Props extends HTMLAttributes<HTMLElement> {
+
+}
+
+export const <%= comp %>: FC<Props> = ({ ...props }) => {
+
+  // Put your GraphQL queries and mutations here, e.g.
+  //     const { data, error, loading } = useQuery<GetOpportunityQuery>(
+  //      GET_OPPORTUNITY,
+  //      {
+  //          variables: { id: listingId },
+  //          fetchPolicy: "cache-and-network"
+  //      }
+  //    );
+
+  
+
+  return (
+    <MyDisplayComponent data={data} loading={loading} error={error}>
+  )
+};
+
+export default <%= comp %>;

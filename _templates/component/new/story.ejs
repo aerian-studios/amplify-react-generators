@@ -1,0 +1,11 @@
+---
+to: src/components/<%= h.changeCase.pascal(name) %>/<%= h.changeCase.pascal(name) %>.story.tsx
+---
+<% const comp = h.changeCase.pascal(name) -%>
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { <%= comp %> } from "./index";
+
+storiesOf("Components|<%= comp %>", module).add("Default", () => (
+    <<%= comp %>  />
+));

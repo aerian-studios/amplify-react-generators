@@ -1,0 +1,7 @@
+{
+  "name": "@aerian/amplify-react-generators",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matt Kane <matt.kane@aerian.com>",
+  "license": "MIT"
+}

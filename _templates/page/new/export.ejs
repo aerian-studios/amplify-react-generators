@@ -1,0 +1,5 @@
+---
+to: src/components/<%= h.changeCase.pascal(name) %>/index.ts
+---
+<% const comp = h.changeCase.pascal(name) -%>
+export { <%= comp %> } from "./<%= comp %>";
