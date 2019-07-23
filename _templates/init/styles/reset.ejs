@@ -1,0 +1,9 @@
+---
+to: src/index.css
+inject: true
+prepend: true
+skip_if: import-normalize
+sh: cd <%= cwd %> && yarn add -D govuk-react styled-components
+
+---
+@import-normalize;

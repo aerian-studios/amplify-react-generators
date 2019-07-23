@@ -1,0 +1,11 @@
+---
+to: package.json
+inject: true
+after: '\"scripts\"\: \{'
+skip_if: lint:fix
+---
+    "format": "prettier --tab-width 4 --prose-wrap always --write \"src/**/*.{js,jsx,ts,tsx,css,scss,md}\"",
+    "lint": "eslint . --ext=js,jsx,ts,tsx",
+    "lint:fix": "eslint . --ext=js,jsx,ts,tsx --fix",
+    "preinstall": "$npm_execpath --silent run checkyarn",
+    "checkyarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use yarn not npm! ⚠️ ' && echo && exit 1)",

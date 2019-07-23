@@ -1,0 +1,10 @@
+---
+to: package.json
+inject: true
+before: '\"dependencies\"\: \{'
+skip_if: '\"prettier\"\: \{'
+---
+    "prettier": {
+        "tabWidth": 4,
+        "proseWrap": "always",
+    }

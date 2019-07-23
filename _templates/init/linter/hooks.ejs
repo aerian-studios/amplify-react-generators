@@ -1,0 +1,28 @@
+---
+to: package.json
+inject: true
+before: '\"scripts\"\: \{'
+skip_if: '\"husky\"\: \{'
+sh: cd <%= cwd %> && yarn add -D husky lint-staged prettier eslint-config-react-app
+---
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "linters": {
+            "*.{css,scss,json,md}": [
+                "prettier --write",
+                "git add"
+            ],
+            "*.{js,jsx,ts,tsx}": [
+                "eslint --fix --max-warnings=0",
+                "git add"
+            ]
+        },
+        "ignore": [
+            "**/package.json",
+            "**/package-lock.json"
+        ]
+    },
